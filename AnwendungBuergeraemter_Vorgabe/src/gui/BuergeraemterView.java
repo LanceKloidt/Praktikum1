@@ -134,6 +134,13 @@ public class BuergeraemterView{
 	            zeigeBuergeraemterAn();
 	        } 
    	    });  
+	    mnItmCsvExport.setOnAction(e ->{
+	    	schreibeBuergeraemterInDatei("csv");
+	    });
+	    mnItmTxtExport.setOnAction(e -> {
+	    	schreibeBuergeraemterInDatei("txt");
+	    });
+	    
     }
     
     private void nehmeBuergeramtAuf(){
@@ -161,14 +168,18 @@ public class BuergeraemterView{
     	}
     }	
 
-    private void zeigeInformationsfensterAn(String meldung){
+    public void zeigeInformationsfensterAn(String meldung){
     	new MeldungsfensterAnzeiger(AlertType.INFORMATION,
     		"Information", meldung).zeigeMeldungsfensterAn();
     }	
     
-    void zeigeFehlermeldungsfensterAn(String meldung){
+    public void zeigeFehlermeldungsfensterAn(String meldung){
        	new MeldungsfensterAnzeiger(AlertType.ERROR,
         	"Fehler", meldung).zeigeMeldungsfensterAn();
+    }
+    
+    private void schreibeBuergeraemterInDatei(String typ) {
+    	baControl.schreibeBuergeraemterInDatei(typ, buergeramt);
     }
 
 }
