@@ -1,4 +1,8 @@
 /business/
+/factories/
 /gui/
-/ownUtil/
 /main/
+/ownUtil/
+/guiBuergeraemter/
+/guiStaedtischeEinrichtungen/
+/guitest/
